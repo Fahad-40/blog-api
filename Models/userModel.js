@@ -20,4 +20,4 @@ password: ({
 })
 
 let user = mongoose.model("userModel" , userSchema);
-module.exports = {user}
+module.exports = user
