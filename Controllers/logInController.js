@@ -29,7 +29,7 @@ const logIn = async (req, res, next) => {
 
         if (isMatch) {
             const token = jwt.sign(
-                { id: user._id },
+                { id: userInfo._id },
                 process.env.JWT_SECRET,
                 { expiresIn: "1d" }
             )
