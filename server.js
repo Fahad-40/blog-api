@@ -4,11 +4,13 @@ let app = express();
 let mongoose = require("mongoose");
 const authRouteSignUp = require("./Routes/signUpRouter")
 const authRoutelogIn = require("./Routes/logInRouter")
+const protectedRouteTest = require("./Routes/protect-test-Router")
 
 app.use(express.json());
 
 app.use("/api/authSignUp" , authRouteSignUp)
 app.use("/api/authlogIn" , authRoutelogIn)
+app.use("/protectTest" , protectedRouteTest)
 
 
 mongoose.connect("mongodb://localhost:27017/blog-api")
