@@ -3,24 +3,24 @@ const mongoose = require("mongoose");
 const postSchema = mongoose.Schema({
 
 title: {
-    type: String(),
+    type: String,
     required: true
 },
 
 content: {
-     type: String(),
+     type: String,
     required: true
 },
 
 author: {
     type:mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "userModel",
     required:true
 },
 
 },
 
-{timestamp:true}
+{timetamps:true}
 );
 
 const postModel = mongoose.model("postModel" , postSchema)
