@@ -1,5 +1,4 @@
 let express = require("express");
-// require("dotenv").config();
 let app = express();
 let mongoose = require("mongoose");
 const authRouteSignUp = require("./Routes/signUpRouter")
@@ -14,7 +13,6 @@ app.use("/api/authlogIn" , authRoutelogIn)
 app.use("/protectTest" , protectedRouteTest)
 app.use("/posts" , postRoutes)
 
-
 mongoose.connect("mongodb://localhost:27017/blog-api")
 .then(() => {
     console.log("Mongodb Connected")
@@ -22,6 +20,7 @@ mongoose.connect("mongodb://localhost:27017/blog-api")
 .catch (() => {
     console.log("Mongodb found error")
 })
+
 app.listen("3000" , () =>{
     console.log("App is listening on port 3000")
 })
